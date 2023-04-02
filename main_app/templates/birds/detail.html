@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>{{ bird.species }} Info</title>
+{% endblock %}
+
+{% block content %}
+<h1>{{ bird.species }} info:</h1>
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ bird.species }}</span>
+        <p>Location: {{ bird.location_observed }}</p>
+        <p>Date Observed: {{ bird.date_observed }}</p>
+        <p>Time of Day: {{ bird.time_observed }}</p>
+        <p>Weather: {{ bird.weather }}</p>
+        <p>Number Observed: {{ bird.number_observed }}</p>
+        <p>Field Notes: {{ bird.field_notes }}</p>
+    </div>
+</div>
+{% endblock %}

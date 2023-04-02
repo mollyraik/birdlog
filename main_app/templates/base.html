@@ -1,4 +1,4 @@
-<!-- {% load static %} -->
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
-    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block title%}
     <title>BirdLog</title>
     {% endblock %}
@@ -25,7 +25,7 @@
                      <a href="{% url 'about' %}">About</a>
                  </li>
                  <li>
-                     <!-- <a href="">All the Birdies</a> -->
+                     <a href="{% url 'birds_index' %}">All the Birdies</a>
                  </li>
              </ul>
          </div>
