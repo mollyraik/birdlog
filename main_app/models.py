@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from datetime import datetime
+from django.urls import reverse
 
 def get_current_time():
     return datetime.now().time()
@@ -17,3 +18,6 @@ class Bird(models.Model):
 
     def __str__(self):
         return self.species
+    
+    def get_absolute_url(self):
+        return reverse('bird_detail', kwargs={ 'bird_id': self.id })
