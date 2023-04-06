@@ -16,5 +16,9 @@
         <p>Number Observed: {{ bird.number_observed }}</p>
         <p>Field Notes: {{ bird.field_notes }}</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'bird_update' bird.id %}">Edit</a>
+        <a href="{% url 'bird_delete' bird.id %}">Delete</a>
+    </div>
 </div>
 {% endblock %}
