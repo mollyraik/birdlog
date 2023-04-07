@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Nest Items</title>
+{% endblock %}
+
+{% block content %}
+
+<h1>Nest Items:</h1>
+
+{% for item in object_list %}
+<a href="{% url 'nest_material_detail' item.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ item.item }}</span>
+            <p>Material: {{ item.material }}</p>
+        </div>
+    </div>
+</a>
+{% endfor %}
+
+{% endblock %}

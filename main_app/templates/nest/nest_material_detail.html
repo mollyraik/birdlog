@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Nest material: {{ nest.item }}</title>
+{% endblock %}
+
+{% block content %}
+<h1>Build a nest with {{ nest.item }}</h1>
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ nest.item }}</span>
+        <p>Material: {{ nest.material }}</p>
+    </div>
+    <div class="card-action">
+        <a href="{% url 'nest_material_update' nest.id %}">Edit</a>
+        <a href="{% url 'nest_material_delete' nest.id %}">Delete</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
-from .models import Bird
+from .models import Bird, Nest
 
 # Create your views here.
 def home(request):
@@ -36,3 +36,26 @@ class BirdDelete(DeleteView):
     model = Bird
     success_url = '/birds/'
     template_name = 'birds/bird_confirm_delete.html'
+
+class NestMaterialList(ListView):
+    model = Nest
+    template_name = 'nest/nest_material_list.html'
+
+class NestMaterialDetail(DetailView):
+    model = Nest
+    template_name = 'nest/nest_material_detail.html'
+
+class NestMaterialCreate(CreateView):
+    model = Nest
+    fields = '__all__'
+    template_name = 'nest/nest_material_form.html'
+
+class NestMaterialUpdate(UpdateView):
+    model = Nest
+    fields = '__all__'
+    template_name = 'nest/nest_material_form.html'
+
+class NestMaterialDelete(DeleteView):
+    model = Nest
+    success_url = '/nest/'
+    template_name = 'nest/nest_material_confirm_delete.html'
