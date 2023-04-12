@@ -1,7 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Bird, Nest
+from .models import Bird, Nest, Feeding, Photo
 
-admin.site.register(Bird)
-admin.site.register(Nest)
+admin.site.register([Bird, Nest, Feeding, Photo])
